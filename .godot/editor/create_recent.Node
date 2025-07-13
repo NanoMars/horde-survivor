@@ -1,0 +1,6 @@
+RigidBody2D
+DampedSpringJoint2D
+Camera2D
+Sprite2D
+CollisionShape2D
+CharacterBody2D
