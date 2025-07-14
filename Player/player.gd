@@ -1,6 +1,8 @@
 # player.gd
 extends CharacterBody2D
 
+@export var weapon: PlayerWeapon
+
 @export var movement_speed := 200.0
 @export var acceleration := 1000.0
 @export var friction := 500.0
@@ -9,6 +11,7 @@ var look_velocity: float = 0
 @export var look_dampening: float = 1
 @export var look_speed: float = 10
 var goal_look: float = 0
+
 
 func _physics_process(delta):
 	# grab input from actions instead of raw axes
@@ -36,8 +39,13 @@ func _physics_process(delta):
 	)
 	if aim_input != Vector2.ZERO:
 		goal_look = aim_input.angle()
+		weapon.firing = true
 	elif move_input != Vector2.ZERO:
 		goal_look = move_input.angle()
+		weapon.firing = false
+	else:
+		weapon.firing = false
+	
 
 	var angle_diff = wrapf(goal_look - rotation, -PI, PI)
 	look_velocity += angle_diff * delta * look_speed

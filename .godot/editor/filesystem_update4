@@ -1,3 +1,5 @@
-res://Player/Weapon/Bullet.gd
+res://Player/player.gd
 res://Player/Weapon/Weapon.gd
-res://Player/UpgradeResource.gd
+res://Player/Player.tscn
+res://World.tscn
+res://Player/Weapon/Bullet.tscn

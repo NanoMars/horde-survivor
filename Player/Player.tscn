@@ -1,24 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://tuv5208psnwu"]
+[gd_scene load_steps=6 format=3 uid="uid://tuv5208psnwu"]
 
 [ext_resource type="Script" uid="uid://d7t1oqb3jl34" path="res://Player/player.gd" id="1_q3lat"]
 [ext_resource type="Script" uid="uid://cmq7s1qssoxmf" path="res://Player/Weapon/Weapon.gd" id="2_ddoul"]
 [ext_resource type="Texture2D" uid="uid://2b38i8elgu6f" path="res://icon.svg" id="2_tok1r"]
+[ext_resource type="PackedScene" uid="uid://bgep04youkpjf" path="res://Player/Weapon/Bullet.tscn" id="4_ddoul"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kpjcp"]
 radius = 32.0624
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_q3lat")
+weapon = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kpjcp")
-script = ExtResource("2_ddoul")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_tok1r")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(38, 0)
-scale = Vector2(0.26, 0.09)
-texture = ExtResource("2_tok1r")
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(35.36, 0)
+rotation = -1.5708
+gizmo_extents = 19.4
+script = ExtResource("2_ddoul")
+bullet_scene = ExtResource("4_ddoul")

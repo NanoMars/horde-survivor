@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgep04youkpjf"]
+[gd_scene load_steps=4 format=3 uid="uid://bgep04youkpjf"]
 
 [ext_resource type="Script" uid="uid://2vcups1vjsnd" path="res://Player/Weapon/Bullet.gd" id="1_p5cu6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_swusr"]
 radius = 4.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p5cu6"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_p5cu6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_swusr")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_p5cu6")
