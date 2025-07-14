@@ -1,3 +1,4 @@
+# player.gd
 extends CharacterBody2D
 
 @export var movement_speed := 200.0

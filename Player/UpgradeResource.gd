@@ -7,6 +7,6 @@ class_name UpgradeResource
 @export var description: String
 @export_range(1, 10) var max_level := 3
 
-func apply(weapon: Node, level: int) -> void:
+func apply(_weapon: Node, _level: int) -> void:
 	# override per upgrade
 	pass
