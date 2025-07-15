@@ -17,7 +17,12 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/resizable=false
 window/size/transparent=true
+
+[global_group]
+
+game_root=""
 
 [input]
 

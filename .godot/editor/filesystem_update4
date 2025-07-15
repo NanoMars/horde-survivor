@@ -3,3 +3,5 @@ res://Player/Weapon/Weapon.gd
 res://Player/Player.tscn
 res://World.tscn
 res://Player/Weapon/Bullet.tscn
+res://Player/Weapon/Bullet.gd
+res://Player/PlayerCamera.gd

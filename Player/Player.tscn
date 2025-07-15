@@ -25,3 +25,6 @@ rotation = -1.5708
 gizmo_extents = 19.4
 script = ExtResource("2_ddoul")
 bullet_scene = ExtResource("4_ddoul")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

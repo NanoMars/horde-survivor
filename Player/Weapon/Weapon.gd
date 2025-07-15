@@ -65,6 +65,8 @@ func shoot():
 	print("Shooting!")
 	for i in range(projectiles_per_shot):
 		var bullet = bullet_scene.instantiate()
+		bullet.global_position = global_position
+		bullet.rotation = global_rotation + randf_range(-0.1, 0.1)
 		bullet.damage = damage
 		bullet.init_effects(bullet_effect_defs)
-		get_parent().add_child(bullet)
+		get_tree().get_first_node_in_group("game_root").add_child(bullet)
